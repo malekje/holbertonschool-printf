@@ -12,7 +12,7 @@ if (a == 'c')
 if (strlen(str) != 1)
 return (-1);
 else if (isalpha(str))
-putchar(str);
+putchar(*str);
 else
 return (-1);
 }
