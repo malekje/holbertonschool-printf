@@ -11,9 +11,10 @@ if (a == 'c')
 {
 if (strlen(str) != 1)
 return (-1);
-else if (toupper(str) < 'A' || toupper(str) > 'Z')
+else if (isalpha(str))
+putchar(str);
+else
 return (-1);
-else putchar(str);
 }
 if (a == 's')
 {
@@ -25,4 +26,5 @@ if (a == '%')
 {
 putchar('%');
 }
+return (0);
 }
