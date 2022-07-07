@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
+#include <ctype.h>
 int _printf(const char *format, ...);
 int check (char a, char *s);
 #endif
