@@ -10,7 +10,7 @@ int i, len;
 if (a == 'c')
 {
 if (strlen(str) != 1)
-return (-1);
+return (0);
 else if (isalpha(str))
 putchar(*str);
 else
