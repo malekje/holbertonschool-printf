@@ -18,7 +18,7 @@ int pchar(va_list arg)
 int pstr(va_list arg)
 {
 	int i = 0;
-	char s = va_arg(arg, char *);
+	char *s = va_arg(arg, char *);
 
 	if (s == NULL)
 		s = "(null)";
