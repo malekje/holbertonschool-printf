@@ -12,7 +12,10 @@ int j = 0;
 print_t type[] = {
 {'c', pchar},
 {'s', pstr},
-{'%', pperc}};
+{'%', pperc},
+{'d', pint},
+{'i', pint},
+{'b', pbin}};
 while (type[i].t != 0)  
 {
 if (type[i].t == c)
