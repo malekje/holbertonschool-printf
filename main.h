@@ -26,4 +26,7 @@ int get_printf(const char c, va_list ap);
 int pchar(va_list arg);
 int pstr(va_list arg);
 int pperc(va_list arg);
+int pint(va_list arg);
+int pbin(va_list arg);
+
 #endif
