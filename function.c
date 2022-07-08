@@ -45,18 +45,32 @@ int pperc(va_list arg)
 /**
  * pint - retun an int
  * @ap: arg
- * Return:  
+ * Return:
  */
 int pint(va_list arg)
 {
 	int n = va_arg(arg, int);
-if (n < 0) {
-        putchar('-');
-        n = -n;
-    }
+	int d, len;
+	unsigned int num;
 
-    if (n/10)
-        pint(n/10);
+	d = 1;
+	len = 0;
+	num = n;
+	if (n < 0)
+	{
+		putchar('-');
+		len++;
+		num = -n;
+	}
 
-    putchar(n%10 + '0');
+	while (num / d > 9)
+		d *= 10;
+	while (d != 0)
+	{
+		putchar('0' + num / d);
+		len++;
+		num %= d;
+		d /= 10;
+	}
+	return (len);
 }
