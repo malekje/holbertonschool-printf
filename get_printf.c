@@ -9,7 +9,7 @@ int get_printf(const char c, va_list ap)
 {
     int i = 0;
     int j = 0;
-    struct printf_type[] = {
+    printf_t type[] = {
         {'c', pchar},
         {'s', pstr},
         {'%', pperc}};
