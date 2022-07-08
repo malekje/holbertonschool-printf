@@ -6,12 +6,12 @@
  */
 int pchar(va_list arg)
 {
-	_putchar(va_arg(arg, int));
+	putchar(va_arg(arg, int));
 	return (1);
 }
 
 /**
- * str - reutn an str
+ * pstr - return an str
  * @ap: var to write
  * Return: string
  */
@@ -24,7 +24,7 @@ int pstr(va_list arg)
 		s = "(null)";
 	while (s[i] != '\0')
 	{
-		_putchar(s[i]);
+		putchar(s[i]);
 		i++;
 	}
 	return (i);
@@ -38,6 +38,6 @@ int pstr(va_list arg)
 int pperc(va_list arg)
 {
 	(void)arg;
-	_putchar('%');
+	putchar('%');
 	return (1);
 }
