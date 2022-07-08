@@ -91,7 +91,7 @@ int pbin(va_list arg)
 	{
 		if ((m % 2) == 0)
 		{
-			putchar(0);
+			putchar(0 + '0');
 		}
 		else
 			putchar(1 + '0');
