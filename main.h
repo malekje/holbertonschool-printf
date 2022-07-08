@@ -12,12 +12,17 @@
  * @op: The operator
  * @f: The function associated
  */
-typedef struct printf_type
+typedef struct print
 {
-	char *t;
-	char (*f)(va_list *);
-} printf_t;
+	char t;
+	int (*f)(va_list );
+} print_t;
+
 int _printf(const char *format, ...);
+int get_printf(const char c, va_list ap);
+
+
+
 int pchar(va_list arg);
 int pstr(va_list arg);
 int pperc(va_list arg);
