@@ -13,7 +13,7 @@ int get_printf(const char c, va_list ap)
         {'c', pchar},
         {'s', pstr},
         {'%', pperc}};
-    while (type[i].t == 0)  
+    while (type[i].t != 0)  
     {
         if (type[i].t == c)
         {
