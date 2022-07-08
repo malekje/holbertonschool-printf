@@ -4,7 +4,7 @@
  * @format: is a character string
  * Return: the number of characters printed
  */
-int _printf(const charformat, ...)
+int _printf(const char format, ...)
 {
 
     int i = 0, j = 0, a = 0;
