@@ -11,7 +11,7 @@ int pchar(va_list arg)
 }
 
 /**
- * pstr - return an str
+ * pstr - ret an str
  * @ap: var to write
  * Return: string
  */
