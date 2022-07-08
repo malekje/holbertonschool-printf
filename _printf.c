@@ -37,8 +37,8 @@ if (format[i + 1] == '\0')
     putchar(format [i]);
     j++;
 }
-}
 i++;
+}
 }
 va_end (ap);
 return (j);
