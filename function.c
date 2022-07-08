@@ -41,3 +41,22 @@ int pperc(va_list arg)
 	putchar('%');
 	return (1);
 }
+
+/**
+ * pint - retun an int
+ * @ap: arg
+ * Return:  
+ */
+int pint(va_list arg)
+{
+	int n = va_arg(arg, int);
+if (n < 0) {
+        putchar('-');
+        n = -n;
+    }
+
+    if (n/10)
+        pint(n/10);
+
+    putchar(n%10 + '0');
+}
