@@ -88,13 +88,20 @@ int pbin(va_list arg)
 	len = 0;
 	m = n;
 
-	
+	if (n <= 1)
+	{
+		putchar(n + '0');
+		len++;
+	}
+	else
+	{
 	while (m > 0)
 	{
 			putchar(m % 2 + '0');
 			len++;
 			m = m / 2;
 		
+	}
 	}
 	return (len + 1);
 }
