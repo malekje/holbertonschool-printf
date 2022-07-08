@@ -6,18 +6,28 @@
  */
 int _printf(const char *format, ...)
 {
-int len, i;
-va_list args;
-va_start(args, *format);
+char *s, *str;
+int len, i = 0, j;
+va_list ap;
+va_start(ap, format);
+printf_t type[]= {
+                    {'c', pchar},
+                    {'s', str},
+                    {'%', per}
+};
 
-len = strlen(format);
-for (i = 0; i < len; i++)
+
+if (format == NULL || (strlen(format) == 1 && format [0] == '%'))
 {
-	if (format[i] == '%')
-	{
-		check(format[i + 1], va_arg(args, char *));
+return (-1);
 }
+while (format[i])
+{
+j = 0;
+while (format[i] != type[j].t && type[j].t)
+j++;
+if (type[j].t == format [i])
+return (type[j].f);
 }
-return (len);
-
+return (1);
 }
