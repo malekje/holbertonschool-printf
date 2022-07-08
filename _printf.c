@@ -12,7 +12,7 @@ va_list ap;
 
 
 
-if (format == NULL || (strlen(format) == 1 || format [0] == '%'))
+if (format == NULL || (strlen(format) == 1 && format [0] == '%'))
 {
 return (-1);
 }
