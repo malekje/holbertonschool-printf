@@ -32,7 +32,7 @@ j = j + a;
 i = i + 2;
 continue;
 
-if (format[i + 1] == '\0')
+if (format[i + a] == '\0')
 {
     putchar(format [i]);
     j++;
