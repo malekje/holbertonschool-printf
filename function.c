@@ -82,7 +82,7 @@ int pint(va_list arg)
  */
 int pbin(va_list arg)
 {
-	int n = va_arg(arg, int);
+	unsigned int n = va_arg(arg, unsigned int);
 	int m, len;
 
 	len = 0;
