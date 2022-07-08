@@ -24,7 +24,7 @@ if (format[i] != '%')
     putchar(format[i]);
     j++;
 }
-if (format[i] == '%')
+if (format[i - 1] == '%')
 {
 a = get_printf(format[i + 1], ap);
 if (a > 0)
