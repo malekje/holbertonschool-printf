@@ -85,16 +85,16 @@ int pbin(va_list arg)
 	int n = va_arg(arg, int);
 	int m, len;
 
-	len = 1;
+	len = 0;
 	m = n;
 	while (m >= 0)
 	{
 		if ((m / 2))
 		{
 			putchar(m / 2 + '0');
+			len++;
+			m = m / 2;
 		}
-		len++;
-		m = m / 2;
 	}
 	return (len);
 }
