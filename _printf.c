@@ -24,12 +24,12 @@ if (format[i] != '%')
     putchar(format[i]);
     j++;
 }
-if (format[i - 1] == '%')
+if (format[i] == '%')
 {
 a = get_printf(format[i + 1], ap);
 if (a > 0)
 j = j + a;
-i = i + 2;
+i = i + 1;
 continue;
 
 if (format[i] == '\0')
