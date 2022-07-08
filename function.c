@@ -2,15 +2,12 @@
 /**
  * pchar - return char
  * @ap: arg
- * Return: char
+ * Return: 1 on success
  */
-char pchar (va_list ap)
+int pchar(va_list arg)
 {
-char c;
-
-c = va_arg(ap, int);
-putchar (c);
-return (1);
+	_putchar(va_arg(arg, int));
+	return (1);
 }
 
 /**
@@ -18,26 +15,29 @@ return (1);
  * @ap: var to write
  * Return: string
  */
-char str(va_list ap)
+int pstr(va_list arg)
 {
-char *s;
+	int i = 0;
+	char *s = va_arg(arg, char *);
 
-s = va_arg(ap, char*);
-if (s == NULL)
-	return (NULL);
-write(STDOUT_FILENO, s, strlen(s));
-return (strlen(s));
+	if (s == NULL)
+		s = "(null)";
+	while (s[i] != '\0')
+	{
+		_putchar(s[i]);
+		i++;
+	}
+	return (i);
 }
 
 /**
- * per - return per
+ * pperc - return per
  * @ap: arg
  * Return: per
  */
-char per(va_list ap)
+int pperc(va_list arg)
 {
-
-putchar('%');
-
-return (1);
+	(void)arg;
+	_putchar('%');
+	return (1);
 }

@@ -18,7 +18,7 @@ typedef struct printf_type
 	char (*f)(va_list *);
 } printf_t;
 int _printf(const char *format, ...);
-char pchar(va_list ap);
-char str(va_list ap);
-char per(va_list ap);
+int pchar(va_list arg);
+int pstr(va_list arg);
+int pperc(va_list arg);
 #endif
