@@ -12,8 +12,8 @@ va_list ap;
 va_start(ap, format);
 printf_t type[]= {
                     {'c', pchar},
-                    {'s', str},
-                    {'%', per}
+                    {'s', pstr},
+                    {'%', pperc}
 };
 
 
