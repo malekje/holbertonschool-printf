@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
         return (-1);
     }
     va_start(ap, format);
-    while (*(format + i))
+    while (*(format + i) && format)
     {
         if (*(format + i) != '%')
         {
@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
         }
         if (*(format + i) == '%')
         {
-            a = get_printf(*(format + i), ap);
+            a = get_printf(*(format + (i + 1)), ap);
             if (a != 0)
             {
                 j = j + a;
