@@ -94,7 +94,7 @@ int pbin(va_list arg)
 			putchar(0);
 		}
 		else
-			putchar(1);
+			putchar(1 + '0');
 		len++;
 		m = m / 2;
 	}
