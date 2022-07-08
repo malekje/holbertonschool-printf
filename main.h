@@ -15,7 +15,7 @@
 typedef struct printf_type
 {
 	char *t;
-	char (*f)(va_list *);
+	int (*f)(va_list *);
 } printf_t;
 int _printf(const char *format, ...);
 int pchar(va_list arg);
