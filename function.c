@@ -96,5 +96,5 @@ int pbin(va_list arg)
 			m = m / 2;
 		}
 	}
-	return (len);
+	return (len + 1);
 }
