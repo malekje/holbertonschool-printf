@@ -15,25 +15,25 @@ int _printf(const char *format, ...)
         return (-1);
     }
     va_start(ap, format);
-    while (format[i])
+    while (*(format + i))
     {
-        if (format[i] != '%')
+        if (*(format + i) != '%')
         {
-            putchar(format[i]);
+            putchar(*(format + i));
             j++;
         }
-        if (format[i] == '%')
+        if (*(format + i) == '%')
         {
-            a = get_printf(format[i + 1], ap);
+            a = get_printf(*(format + i), ap);
             if (a != 0)
             {
                 j = j + a;
                 i = i + 2;
                 continue;
             }
-            if (format[i] == '\0')
+            if (*(format + i) == '\0')
             {
-                putchar(format[i]);
+                putchar(*(format + i));
                 j++;
             }
         }
