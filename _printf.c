@@ -40,7 +40,7 @@ if (format[i] != '\0')
 }
 i++;
 }
+}
 va_end (ap);
 return (j);
-}
 }
