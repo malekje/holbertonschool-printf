@@ -35,6 +35,7 @@ continue;
 if (format[i + 1] == '\0')
 {
     putchar(format [i]);
+    putchar(format [i]);
     j++;
 }
 }
