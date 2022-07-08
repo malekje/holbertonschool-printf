@@ -1,30 +1,43 @@
 #include "main.h"
 /**
- * check - a simple function to check the carac
- * @a: the carac
+ * pchar - return char
+ * @ap: arg
+ * Return: char
  */
-int check (char a, char *str)
+char pchar (va_list ap)
 {
-int i, len;
+char c;
 
-if (a == 'c')
-{
-if (strlen(str) != 1)
-return (-1);
-else if (isalpha(str))
-putchar(*str);
-else
-return (-1);
+c = va_arg(ap, int);
+putchar (c);
+return (1);
 }
-if (a == 's')
+
+/**
+ * str - reutn an str
+ * @ap: var to write
+ * Return: string
+ */
+char str(va_list ap)
 {
-len = strlen(str);
-for (i = 0; i < len; i++)
-putchar(str[i]);
+char *s;
+
+s = va_arg(ap, char*);
+if (s == NULL)
+	return (NULL);
+write(STDOUT_FILENO, s, strlen(s));
+return (strlen(s));
 }
-if (a == '%')
+
+/**
+ * per - return per
+ * @ap: arg
+ * Return: per
+ */
+char per(va_list ap)
 {
+
 putchar('%');
-}
-return (0);
+
+return (1);
 }
