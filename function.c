@@ -37,7 +37,7 @@ int pstr(va_list arg)
  */
 int pperc(va_list arg)
 {
+	(void)arg;
 	putchar('%');
-	putchar(va_arg(arg, int));
 	return (1);
 }
