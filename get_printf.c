@@ -14,8 +14,7 @@ print_t type[] = {
 {'s', pstr},
 {'%', pperc},
 {'d', pint},
-{'i', pint},
-{'b', pbin}};
+{'i', pint}};
 while (type[i].t != 0)  
 {
 if (type[i].t == c)
