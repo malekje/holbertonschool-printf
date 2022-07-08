@@ -6,28 +6,40 @@
  */
 int _printf(const char *format, ...)
 {
-char *s, *str;
-int len, i = 0, j;
+
+int i = 0, j = 0, a = 0;
 va_list ap;
-va_start(ap, format);
-printf_t type[]= {
-                    {'c', pchar},
-                    {'s', pstr},
-                    {'%', pperc}
-};
+
 
 
 if (format == NULL || (strlen(format) == 1 && format [0] == '%'))
 {
 return (-1);
 }
+va_start(ap, format);
 while (format[i])
 {
-j = 0;
-while (format[i] != type[j].t && type[j].t)
-j++;
-if (type[j].t == format [i])
-return (type[j].f);
+if (format[i] != '%')
+{
+    putchar(format[i]);
+    j++;
 }
-return (1);
+if (format[i] == '%')
+{
+a = get_printf(format[i + 1], ap);
+if (a > 0)
+j = j + a;
+i = i + 2;
+continue;
+
+if (format[i + 1] == '\0')
+{
+    putchar(format [i]);
+    j++;
+}
+}
+i++;
+}
+va_end (ap);
+return (j);
 }
