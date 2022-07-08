@@ -27,12 +27,12 @@ if (format[i] != '%')
 if (format[i] == '%')
 {
 a = get_printf(format[i + 1], ap);
-if (a > 1)
+if (a > 0)
 j = j + a;
 i = i + 2;
 continue;
 
-if (format[i] == '\0')
+if (format[i + 1] == '\0')
 {
     putchar(format [i]);
     j++;
