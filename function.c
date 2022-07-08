@@ -92,5 +92,5 @@ int pbin(va_list arg)
 	len++;
   }
 
-  return (len);
+  return (len + 1);
 }
