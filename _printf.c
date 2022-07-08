@@ -31,8 +31,8 @@ if (a > 0)
 (
 j = j + a;
 i = i + 2;
-)
 continue;
+)
 
 if (format[i] == '\0')
 {
