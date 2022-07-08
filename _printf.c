@@ -26,7 +26,7 @@ if (format[i] != '%')
 }
 if (format[i] == '%')
 {
-a = get_printf(format[i + 1], ap);
+a = get_printf(format[i], ap);
 if (a > 0)
 j = j + a;
 i = i + 2;
