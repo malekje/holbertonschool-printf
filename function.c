@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * pchar - return char
- * @arg: arg
+ * @ap: arg
  * Return: 1 on success
  */
 int pchar(va_list arg)
@@ -11,8 +11,8 @@ int pchar(va_list arg)
 }
 
 /**
- * pstr - ret an str
- * @arg: var to write
+ * pstr - return an str
+ * @ap: var to write
  * Return: string
  */
 int pstr(va_list arg)
@@ -32,7 +32,7 @@ int pstr(va_list arg)
 
 /**
  * pperc - return per
- * @arg: arg
+ * @ap: arg
  * Return: per
  */
 int pperc(va_list arg)
