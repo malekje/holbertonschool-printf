@@ -6,6 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
+
 int i = 0, j = 0, a = 0;
 va_list ap;
 
@@ -18,12 +19,12 @@ return (-1);
 va_start(ap, format);
 while (format[i])
 {
-if (*(format + i) != '%')
+if (format[i] != '%')
 {
-    putchar(*(format + 1));
+    putchar(format[i + 1]);
     j++;
 }
-else if (*(format + i) == '%')
+if (format[i] == '%')
 {
 a = get_printf(*(format + (i + 1)), ap);
 if (a > 0)
@@ -31,9 +32,9 @@ j = j + a;
 i = i + 2;
 
 
-if (*(format + i + 1) == '\0')
+if (format[i + 1] == '\0')
 {
-    putchar(*(format + i));
+    putchar(format [i]);
     j++;
 }
 }
