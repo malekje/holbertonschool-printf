@@ -11,8 +11,8 @@ int get_printf(const char c, va_list ap)
     int j = 0;
     printf_t type[] = {
         {'c', pchar},
-        {'s', str},
-        {'%', per}};
+        {'s', pstr},
+        {'%', pperc}};
     while (type[i].t != 0)
     {
         if (type[i].t == c)
