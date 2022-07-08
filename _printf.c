@@ -26,10 +26,9 @@ int _printf(const char *format, ...)
         {
             a = get_printf(*(format + (i + 1)), ap);
             if (a != 0)
-            {
                 j = j + a;
-                i = i + 2;
-            }
+            i = i + 2;
+            continue;
             if (*(format + (i + 1)) == '\0')
             {
                 putchar(*(format + i));
