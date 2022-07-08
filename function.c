@@ -87,14 +87,14 @@ int pbin(va_list arg)
 
 	len = 0;
 	m = n;
-	while (m >= 0)
+
+	
+	while (m > 0)
 	{
-		if ((m / 2))
-		{
 			putchar(m % 2 + '0');
 			len++;
 			m = m / 2;
-		}
+		
 	}
 	return (len + 1);
 }
