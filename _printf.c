@@ -38,7 +38,6 @@ if (format[i + 1] == '\0')
     j++;
 }
 }
-putchar(format [i]);
 i++;
 }
 va_end (ap);
