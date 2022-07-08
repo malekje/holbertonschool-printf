@@ -82,26 +82,15 @@ int pint(va_list arg)
  */
 int pbin(va_list arg)
 {
-	unsigned int n = va_arg(arg, unsigned int);
-	int m, len;
+	long long int n = va_arg(arg, long long int);
+  int i = 1, len;
 
-	len = 0;
-	m = n;
+  while (n!=0) {
+    putchar(n % 2 + '0');
+    n /= 2;
+    i *= 10;
+	len++;
+  }
 
-	if (n <= 1)
-	{
-		putchar(n + '0');
-		len++;
-	}
-	else
-	{
-	while (m > 0)
-	{
-			putchar(m % 2 + '0');
-			len++;
-			m = m / 2;
-		
-	}
-	}
-	return (len + 1);
+  return (len);
 }
