@@ -30,7 +30,7 @@ a = get_printf(format[i + 1], ap);
 if (a > 0)
 j = j + a;
 i = i + 2;
-return (1);
+continue;
 
 if (format[i] == '\0')
 {
