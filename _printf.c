@@ -22,7 +22,7 @@ while (format[i])
 if (format[i] != '%')
 {
     putchar(format[i]);
-    j++;
+    i++;
 }
 if (format[i] == '%')
 {
