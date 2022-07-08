@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
                 i = i + 2;
                 continue;
             }
-            if (*(format + i) == '\0')
+            if (*(format + (i + 1)) == '\0')
             {
                 putchar(*(format + i));
                 j++;
