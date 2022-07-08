@@ -85,7 +85,7 @@ int pbin(va_list arg)
 	int n = va_arg(arg, int);
 	int m, len;
 
-	len = 0;
+	len = 1;
 	m = n;
 	while (m >= 0)
 	{
