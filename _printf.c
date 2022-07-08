@@ -32,11 +32,11 @@ j = j + a;
 i = i + 2;
 continue;
 
-if (format[i] == '\0')
-{
+if (format[i] != '\0')
+
     putchar(format [i]);
     j++;
-}
+
 }
 i++;
 }
