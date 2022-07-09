@@ -7,22 +7,23 @@
  */
 int get_printf(const char c, va_list ap)
 {
-int i = 0;
-int j = 0;
-print_t type[] = {
-{'c', pchar},
-{'s', pstr},
-{'%', pperc},
-{'d', pint},
-{'i', pint}};
-while (type[i].t != 0)  
-{
-if (type[i].t == c)
-{
-j += type[i].f(ap);
-return (j);
-}
-i++;
-}
-return (0);
+    int i = 0;
+    int j = 0;
+    print_t type[] = {
+        {'c', pchar},
+        {'s', pstr},
+        {'%', pperc},
+        {'d', pint},
+        {'i', pint},
+        {'b', pbin}};
+    while (type[i].t != 0)
+    {
+        if (type[i].t == c)
+        {
+            j += type[i].f(ap);
+            return (j);
+        }
+        i++;
+    }
+    return (0);
 }
