@@ -19,19 +19,24 @@ int _printf(const char *format, ...)
     {
         if (format[i] != '%')
         {
-            putchar(*(format + i));
+            putchar(format[i]);
             j++;
         }
-        if (*(format + i) == '%')
+        if (format[i] == '%')
         {
             a = get_printf(*(format + (i + 1)), ap);
             if (a != 0)
                 j = j + a;
             i = i + 2;
             continue;
+            if (format [i] == 'K' || format[i] == '!')
+				{
+					write(1, *format, strlen(*format));
+					return (_strlen(*format));
+				}
             if (*(format + (i + 1)) == '\0')
             {
-                putchar(*(format + i));
+                putchar(format[i]);
                 j++;
             }
         }
