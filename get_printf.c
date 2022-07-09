@@ -15,7 +15,11 @@ int get_printf(const char c, va_list ap)
 		{'%', pperc},
 		{'d', pint},
 		{'i', pint},
-		{'b', pbin}};
+		{'b', pbin},
+		{'u', puns},
+		{'o', poct},
+		{'x', phex},
+		{'X', pHEX}};
 	while (type[i].t != 0)
 	{
 		if (type[i].t == c)
