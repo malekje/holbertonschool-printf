@@ -12,10 +12,10 @@ int next(const char *format, int i)
     int count = 0;
     if (format[i] != '%')
     {
-        _putchar(format[i - 1]);
+        putchar(format[i - 1]);
         count += 1;
     }
-    _putchar(format[i]);
+    putchar(format[i]);
     count += 1;
     return (count);
 }
