@@ -15,13 +15,11 @@
 typedef struct print
 {
 	char t;
-	int (*f)(va_list );
+	int (*f)(va_list);
 } print_t;
 
 int _printf(const char *format, ...);
 int get_printf(const char c, va_list ap);
-int next(const char *format, int i);
-
 
 int pchar(va_list arg);
 int pstr(va_list arg);
