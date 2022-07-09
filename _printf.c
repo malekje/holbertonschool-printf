@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
         return (-1);
     }
     va_start(ap, format);
-    while (format && format[i])
+    while (*format != '\0')
     {
         if (format[i] != '%')
         {
@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
                 j = j + a;
             i = i + 2;
             continue;
-            if (format [i] == 'K' || format[i] == '!')
+            if (format [i + 1] == 'K' || format[i + 1] == '!')
 				{
 					write(1, format, strlen(format));
 					return (strlen(format));
