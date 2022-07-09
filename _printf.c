@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 
-    int i = 0, j = 0, a = 0;
+    unsigned int i = 0, j = 0, a = 0;
     va_list ap;
 
     if (format == NULL || (strlen(format) == 1 && format[0] == '%'))
@@ -15,28 +15,29 @@ int _printf(const char *format, ...)
         return (-1);
     }
     va_start(ap, format);
-    while (*(format + i) && format)
+    while (format && format[i])
     {
-        if (*(format + i) != '%')
+        if (format[i] != '%')
         {
-            putchar(*(format + i));
+            putchar(format[i]);
             j++;
         }
-        if (*(format + i) == '%')
+        else if (format[i] == '\0')
+            return (-1);
+        else if (format[i] == '%')
         {
-            a = get_printf(*(format + (i + 1)), ap);
-            if (a != 0)
-                j = j + a;
-            i = i + 2;
-            continue;
-            if (*(format + (i + 1)) == '\0')
+            a = get_printf(format[i + 1], ap);
+            if (a == 0)
+                j = j + next(format, i);
+            else
             {
-                putchar(*(format + i));
-                j++;
+                j = j + a;
+                if (format[i] == '+' || format[i] == ' ' || format[i] == '#')
+                    i++;
             }
         }
-        i++;
+        i ++;
     }
-    va_end(ap);
-    return (j);
-}
+        va_end(ap);
+        return (j);
+    }
