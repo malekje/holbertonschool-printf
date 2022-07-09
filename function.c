@@ -76,21 +76,35 @@ int pint(va_list arg)
 }
 
 /**
- * pbin - make a binary
+ * pbin - make a b
  * @ap: arg
  * Return:
  */
 int pbin(va_list arg)
 {
-	unsigned int n = va_arg(arg, unsigned int);
-  int i = 1, len;
+	unsigned int b[32];
+	int i = 0;
+	unsigned int n = 0, j = 0;
 
-  while (n!=0) {
-    putchar(n % 2 + '0');
-    n /= 2;
-    i *= 10;
-	len++;
-  }
-
-  return (len + 1);
+	n = va_arg(arg, unsigned int);
+	if (n <= 1)
+	{
+		_putchar(n + '0');
+		j++;
+	}
+	else
+	{
+	while (n > 0)
+	{
+		b[i] = n % 2;
+		n = n / 2;
+		i++;
+	}
+	for (i = i - 1; i >= 0; i--)
+	{
+		_putchar(b[i] + '0');
+		j++;
+	}
+	}
+	return (j);
 }
