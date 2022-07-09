@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
             putchar(format[i]);
             j++;
         }
-        if (format[i] == '%')
+        if (format[i] == '%' && format[i + 1] != 'K' && format[i + 1] != '!')
         {
             a = get_printf(*(format + (i + 1)), ap);
             if (a != 0)
@@ -34,6 +34,11 @@ int _printf(const char *format, ...)
                 putchar(format[i]);
                 j++;
             }
+        }
+        else if (format[i + 1] == 'K' || format[i + 1] == '!')
+        {
+            putchar(format[i]);
+            j++;
         }
         i++;
     }
