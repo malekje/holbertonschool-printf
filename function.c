@@ -89,7 +89,7 @@ int pbin(va_list arg)
 	n = va_arg(arg, unsigned int);
 	if (n <= 1)
 	{
-		_putchar(n + '0');
+		putchar(n + '0');
 		j++;
 	}
 	else
@@ -102,7 +102,7 @@ int pbin(va_list arg)
 	}
 	for (i = i - 1; i >= 0; i--)
 	{
-		_putchar(b[i] + '0');
+		putchar(b[i] + '0');
 		j++;
 	}
 	}
