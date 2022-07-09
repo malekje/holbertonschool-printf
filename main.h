@@ -20,7 +20,7 @@ typedef struct print
 
 int _printf(const char *format, ...);
 int get_printf(const char c, va_list ap);
-
+int next(const char *format, int i);
 
 
 int pchar(va_list arg);
