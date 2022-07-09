@@ -12,7 +12,7 @@ int pchar(va_list arg)
 
 /**
  * pstr - return an str
- * @arf: var to write
+ * @arg: var to write
  * Return: string
  */
 int pstr(va_list arg)
