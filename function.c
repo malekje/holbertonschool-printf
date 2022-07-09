@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * pchar - return char
- * @ap: arg
+ * @arg: arg
  * Return: 1 on success
  */
 int pchar(va_list arg)
@@ -12,7 +12,7 @@ int pchar(va_list arg)
 
 /**
  * pstr - return an str
- * @ap: var to write
+ * @arf: var to write
  * Return: string
  */
 int pstr(va_list arg)
@@ -32,7 +32,7 @@ int pstr(va_list arg)
 
 /**
  * pperc - return per
- * @ap: arg
+ * @arg: arg
  * Return: per
  */
 int pperc(va_list arg)
@@ -44,8 +44,8 @@ int pperc(va_list arg)
 
 /**
  * pint - retun an int
- * @ap: arg
- * Return:
+ * @arg: arg
+ * Return: len
  */
 int pint(va_list arg)
 {
@@ -77,8 +77,8 @@ int pint(va_list arg)
 
 /**
  * pbin - make a b
- * @ap: arg
- * Return:
+ * @arg: arg
+ * Return: len
  */
 int pbin(va_list arg)
 {
@@ -94,17 +94,17 @@ int pbin(va_list arg)
 	}
 	else
 	{
-	while (n > 0)
-	{
-		b[i] = n % 2;
-		n = n / 2;
-		i++;
-	}
-	for (i = i - 1; i >= 0; i--)
-	{
-		putchar(b[i] + '0');
-		j++;
-	}
+		while (n > 0)
+		{
+			b[i] = n % 2;
+			n = n / 2;
+			i++;
+		}
+		for (i = i - 1; i >= 0; i--)
+		{
+			putchar(b[i] + '0');
+			j++;
+		}
 	}
 	return (j);
 }
