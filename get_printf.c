@@ -22,7 +22,7 @@ int get_printf(const char c, va_list ap)
 		{'X', pHEX},
 		{'S', pSTR},
 		{'p', ppntr},
-		{'r', prevs}
+		{'r', prevs},
 		{NULL, NULL}};
 
 
