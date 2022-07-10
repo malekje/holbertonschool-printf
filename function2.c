@@ -132,7 +132,7 @@ int pHEX(va_list arg)
 	for (i = t - 1; i >= 0; i--)
 	{
 		p = a[i] + '0';
-		_putchar(p);
+		putchar(p);
 	}
 	return (t);
 }
