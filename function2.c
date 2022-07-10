@@ -144,7 +144,7 @@ int pHEX(va_list arg)
  */
 int pSTR(va_list arg)
 {
-	int i = 0;
+	int i = 0, b;
 	char *s = va_arg(arg, char *);
 
 	if (s == NULL)
