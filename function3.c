@@ -7,7 +7,7 @@
 int ppntr(va_list arg)
 {
 
-unsigned long h[30], n = 0;
+unsigned long h[20], n = 0;
 	unsigned int len = 0;
 	int i = 0;
 
@@ -29,7 +29,7 @@ unsigned long h[30], n = 0;
 	while (n > 0)
 	{
 		if (n % 16 >= 10 && n % 16 <= 15)
-			h[i] = 65 + (n % 16);
+			h[i] = 87 + (n % 16);
 		else
 			h[i] = 48 + (n % 16);
 		n = n / 16;
