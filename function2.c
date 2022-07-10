@@ -151,7 +151,7 @@ int pSTR(va_list arg)
 		s = "(null)";
 	while (s[i] != '\0')
 	{
-		b = int s[i];
+		b = s[i];
 		if (b == 92 && s[i + 1] == 'n')
 		{
 			putchar('x');
