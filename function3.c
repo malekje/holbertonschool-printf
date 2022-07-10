@@ -53,7 +53,7 @@ int ppntr(va_list arg)
 
 
 /**
- * prev - print reversed string
+ * prevs - print reversed string
  * @arg: arg
  * Return: len
  */
@@ -77,4 +77,32 @@ int i = 0;
 			putchar(s[i]);
 	}
 	return (strlen(s));
+}
+
+int proot(va_list arg)
+{
+	char *s = va_arg(arg, char *);
+	int i, j, count = 0;
+	char code[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char encode[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		j = 0;
+		while ((code[j] != '\0') && (s[i] != code[j]))
+		{
+			j++;
+		}
+		if (s[i] == code[j])
+		{
+			putchar(encode[j]);
+			count++;
+		}
+		else if (code[j] == '\0')
+		{
+			putchar(s[i]);
+			count++;
+		}
+	}
+	return (count);
 }
