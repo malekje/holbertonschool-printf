@@ -114,7 +114,7 @@ int pHEX(va_list arg)
 
 	if (n < 1)
 	{
-		write(1, "0", 1);
+		putchar('0');
 		return (1);
 	}
 	for (i = 0; n > 0; i++)
@@ -151,7 +151,7 @@ int pSTR(va_list arg)
 		s = "(null)";
 	while (s[i] != '\0')
 	{
-		if (s[i] == '\\' && s[i + 1] == 'n')
+		if (s[i] == "\\" && s[i + 1] == 'n')
 		{
 			putchar('x');
 			putchar('0');
