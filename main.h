@@ -30,7 +30,5 @@ int puns(va_list arg);
 int poct(va_list arg);
 int phex(va_list arg);
 int pHEX(va_list arg);
-int	HEXADECIMAL(unsigned int n);
-int	hexadecimal(unsigned int n);
 
 #endif
