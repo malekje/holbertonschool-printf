@@ -50,3 +50,23 @@ int ppntr(va_list arg)
 	len = len + 2;
 	return (len);
 }
+
+
+/**
+ * prev - print reversed string
+ * @arg: arg
+ * Return: len
+ */
+int prevs(va_list arg)
+{
+int i = 0;
+	char *s = va_arg(arg, char *);
+
+	if (s == NULL)
+		s = "(null)";
+
+		for (i = strlen(s) - 1; i >= 0; i++)
+			putchar(s[i]);
+
+	return (strlen(s));
+}
