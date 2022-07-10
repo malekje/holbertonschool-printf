@@ -66,7 +66,6 @@ int poct(va_list arg)
 	return (a);
 }
 
-
 /**
  * phex - Unsigned hexadecimal integer
  * @arg: arg
@@ -74,11 +73,32 @@ int poct(va_list arg)
  */
 int phex(va_list arg)
 {
-unsigned int n = va_arg(arg, int);
+	unsigned int n = va_arg(arg, unsigned int);
+	unsigned int a[1024];
+	int i = 0, t = 0;
+	char p;
 
-	return (hexadecimal(n));
+	if (n < 1)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
+	for (i = 0; n > 0; i++, t++)
+	{
+		a[t] = n % 16;
+		n = n / 16;
+		if (a[t] > 10)
+			a[i] = a[t] + 39;
+		else
+			a[i] = a[t];
+	}
+	for (i = t - 1; i >= 0; i--)
+	{
+		p = a[i] + '0';
+		putchar(p);
+	}
+	return (t);
 }
-
 
 /**
  * pHEX - Unsigned hexadecimal integer (uppercase)
@@ -88,7 +108,31 @@ unsigned int n = va_arg(arg, int);
 int pHEX(va_list arg)
 {
 
-	unsigned int n = va_arg(arg, int);
+	unsigned int n = va_arg(arg, unsigned int);
+	int a[1024], i = 0, t = 0;
+	char p;
 
-	return (HEXADECIMAL(n));
+	if (n < 1)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
+	for (i = 0; n > 0; i++)
+	{
+		a[t] = n % 16;
+		n = n / 16;
+		if (a[i] > 10)
+			a[i] = a[t] + 7;
+		else
+		{
+			a[i] = a[t];
+		}
+		t++;
+	}
+	for (i = t - 1; i >= 0; i--)
+	{
+		p = a[i] + '0';
+		_putchar(p);
+	}
+	return (t);
 }
