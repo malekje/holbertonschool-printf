@@ -63,10 +63,18 @@ int i = 0;
 	char *s = va_arg(arg, char *);
 
 	if (s == NULL)
+	{
 		s = "(null)";
-
+	while (s[i] != '\0')
+	{
+		putchar(s[i]);
+		i++;
+	}
+	}
+	else
+	{
 		for (i = strlen(s) - 1; i >= 0; i++)
 			putchar(s[i]);
-
+	}
 	return (strlen(s));
 }
