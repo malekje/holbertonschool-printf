@@ -10,7 +10,7 @@ int	HEXADECIMAL(unsigned int n)
 
 	if (n >= 16)
 		c += HEXADECIMAL(n / 16);
-	c += putchar(a[n % 16]);
+	c += putchar(a[n % 16] + '0');
 	return (c);
 }
 
@@ -26,6 +26,6 @@ int	hexadecimal(unsigned int n)
 
 	if (n >= 16)
 		c += hexadecimal(n / 16);
-	c += putchar(a[n % 16]);
+	c += putchar(a[n % 16] + '0');
 	return (c);
 }
