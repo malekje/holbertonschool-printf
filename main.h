@@ -32,6 +32,7 @@ int phex(va_list arg);
 int pHEX(va_list arg);
 int pSTR(va_list arg);
 int ppntr(va_list arg);
+int prevs(va_list arg);
 
 int intlen(int a);
 int hexa(unsigned int n);
