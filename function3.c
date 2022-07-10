@@ -73,7 +73,7 @@ int i = 0;
 	}
 	else
 	{
-		for (i = strlen(s) - 1; i >= 0; i++)
+		for (i = strlen(s) - 1; i >= 0; i--)
 			putchar(s[i]);
 	}
 	return (strlen(s));
