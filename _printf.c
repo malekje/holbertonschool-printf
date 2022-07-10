@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 			putchar(format[i]);
 			j++;
 		}
-		if (format[i] == '%' && format[i] == '6')
+		if (format[i] == '%' && format[i + 1] == '6')
 		{
 			if (6 - intlen(6) > 0)
 			{
@@ -31,12 +31,12 @@ int _printf(const char *format, ...)
 					putchar(" ");
 				}
 			}
-			a = get_printf(*(format + (i + 1)), ap);
+			a = get_printf(*(format + (i + 2)), ap);
 			if (a != 0)
 				j = j + a;
 			i = i + 2;
 			continue;
-			if (*(format + (i + 1)) == '\0')
+			if (*(format + (i + 2)) == '\0')
 			{
 				putchar(format[i]);
 				j++;
