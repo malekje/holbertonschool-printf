@@ -1,4 +1,38 @@
 #include "main.h"
+
+/**
+ * hexa - prints in hexadecimal form in lowercase.
+ * @n: unsigned ling int
+ * Return: j
+ */
+int hexa(unsigned int n)
+{
+	unsigned int a[1024];
+	int i = 0, j = 0;
+	char p;
+
+	if (n < 1)
+	{
+		putchar('0');
+		return (1);
+	}
+	for (i = 0; n > 0; i++, j++)
+	{
+		a[j] = n % 16;
+		n = n / 16;
+		if (a[j] > 10)
+			a[i] = a[j] + 39;
+		else
+			a[i] = a[j];
+	}
+	for (i = j - 1; i >= 0; i--)
+	{
+		p = a[i] + '0';
+		putchar(p);
+	}
+	return (j);
+}
+
 /**
  * ppntr - print pointer
  * @arg: arg
@@ -7,43 +41,12 @@
 int ppntr(va_list arg)
 {
 
-unsigned long h[20], n = 0;
-	unsigned int len = 0;
-	int i = 0;
+	unsigned long int n = va_arg(arg, unsigned long int);
+	int len = 0;
 
-	n = va_arg(arg, unsigned long);
-	if (n == 0)
-	{
-		putchar('(');
-		putchar('n');
-		putchar('i');
-		putchar('l');
-		putchar(')');
-		len += 5;
-	}
-	else if (n > 0)
-	{
 	putchar('0');
 	putchar('x');
-	len += 2;
-	while (n > 0)
-	{
-		if (n % 16 >= 10 && n % 16 <= 15)
-			h[i] = 87 + (n % 16);
-		else
-			h[i] = 48 + (n % 16);
-		n = n / 16;
-		i++;
-	}
-	for (--i; i >= 0; i--)
-	{
-		putchar(h[i]);
-		len++;
-	}
-	}
+	len += hexa(n);
+	len = len + 2;
 	return (len);
-
-
-
 }
-
