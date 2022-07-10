@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * HEXADECIMAL - Unsigned hexadecimal integer (uppercase)
  * @n: number
@@ -10,7 +11,7 @@ int	HEXADECIMAL(unsigned int n)
 
 	if (n >= 16)
 		c += HEXADECIMAL(n / 16);
-	c += putchar(a[n % 16] + '0');
+	c += putchar(a[n % 16]);
 	return (c);
 }
 
