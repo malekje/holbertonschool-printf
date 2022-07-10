@@ -138,11 +138,11 @@ int pHEX(va_list arg)
 }
 
 /**
- * pstr - return an str
+ * pSTR - return an str
  * @arg: var to write
  * Return: string
  */
-int pstr(va_list arg)
+int pSTR(va_list arg)
 {
 	int i = 0;
 	char *s = va_arg(arg, char *);
