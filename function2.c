@@ -136,3 +136,33 @@ int pHEX(va_list arg)
 	}
 	return (t);
 }
+
+/**
+ * pstr - return an str
+ * @arg: var to write
+ * Return: string
+ */
+int pstr(va_list arg)
+{
+	int i = 0;
+	char *s = va_arg(arg, char *);
+
+	if (s == NULL)
+		s = "(null)";
+	while (s[i] != '\0')
+	{
+		if (s[i - 1] == '\\' && s[i] == 'n')
+		{
+			putchar('x');
+			putchar('0');
+			putchar('A');
+			i++;
+		}
+		else
+		{
+		putchar(s[i]);
+		i++;
+	}
+	}
+	return (i);
+}
