@@ -7,9 +7,9 @@
 #include <unistd.h>
 
 /**
- * struct op - Struct op
+ * struct print - Struct op
  *
- * @op: The operator
+ * @t: The operator
  * @f: The function associated
  */
 typedef struct print
@@ -21,9 +21,16 @@ typedef struct print
 int _printf(const char *format, ...);
 int get_printf(const char c, va_list ap);
 
-
-
 int pchar(va_list arg);
 int pstr(va_list arg);
 int pperc(va_list arg);
+int pint(va_list arg);
+int pbin(va_list arg);
+int puns(va_list arg);
+int poct(va_list arg);
+int phex(va_list arg);
+int pHEX(va_list arg);
+int pSTR(va_list arg);
+
+
 #endif
