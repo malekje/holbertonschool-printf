@@ -19,7 +19,8 @@ int get_printf(const char c, va_list ap)
 		{'u', puns},
 		{'o', poct},
 		{'x', phex},
-		{'X', pHEX}};
+		{'X', pHEX},
+		{'S', pSTR}};
 	while (type[i].t != 0)
 	{
 		if (type[i].t == c)
